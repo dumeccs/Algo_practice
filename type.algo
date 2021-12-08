@@ -1,0 +1,15 @@
+VAR
+
+    i:INTEGER:=26;
+    f:FLOAT:=4.56;
+    c:CHAR:='c';
+    s:STRING:='str';
+    b:BOOLEAN:=true;
+BEGIN
+    f:=i;
+    i:=f;
+    f:=c;
+    s:=c;
+    b:=i
+
+END 
