@@ -1,23 +1,33 @@
 let myStatement = "I am Paul Momoh, often called Dumeh"
 
-function countSentence(sentence){
-    let output = {
-    sentenceLength: 0,
-    noOfWords: 0,
-    vowelCount: 0,
-    }
-
-  output.sentenceLength = sentence.length
-
-  for(let i = 0; i < sentence.length; i++){
-    if (sentence[i] == ' ' || sentence[i] == '.'){
-    output.noOfWords += 1
+function readSentence(str){
+ let charMap = {
+     a : "a",
+     b : "b",
+     c : "c",
+     d : "d",
+     e : "e"
+ }
+ let noOfWords = 0;
+ let wordsLength = str.length
+ let vowelCount=0
+ for(let i=0;i<str.length;i++){
+     if(str[i] in charMap){ 
+        vowelCount++ 
+     }
+     if(str[i] ===" " || str[i]==="."){
+         noOfWords++
+     }
+ }
+ 
+return{wordsLength,noOfWords,vowelCount}
 }
-  }
+readSentence(myStatement)
 
-  let newSentence = Array.from(sentence.toLowerCase())
-  output.vowelCount = newSentence.filter(letter => 'aeiou'.includes(letter)).length
-  return output
-
-  }
-  console.log(countSentence(sentence))
+/*  
+      for(let i=0;i<str.length;i++){ 
+          if( charMap[str[i]]){
+             vowelCount++ 
+          }
+         
+*/
